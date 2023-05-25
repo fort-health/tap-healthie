@@ -136,4 +136,4 @@ dmypy.json
 .pyre/
 
 # Local configs
-.json
+*.json

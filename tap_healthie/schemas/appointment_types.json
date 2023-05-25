@@ -23,6 +23,12 @@
         "integer"
       ]
     },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "pricing": {
       "type": [
         "null",
