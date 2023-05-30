@@ -20,13 +20,20 @@ class HealthieStream(GraphQLStream):
     """Healthie stream class."""
 
     @property
+    def environment(self) -> str:
+        """Return the environment based on API key format"""
+        if self.config.get("api_key").startswith("gh_sbox"):
+            return "sandbox"
+        else:
+            return "production"
+
+    @property
     def url_base(self) -> str:
         """Return the API URL root, configurable via tap settings."""
-        if self.config.get("environment").lower() == "sandbox":
-            url = "https://staging-api.gethealthie.com/graphql"
+        if self.environment == "sandbox":
+            return "https://staging-api.gethealthie.com/graphql"
         else:
-            url = "https://api.gethealthie.com/graphql"
-        return url
+            return "https://api.gethealthie.com/graphql"
 
     @property
     def http_headers(self) -> dict:
@@ -36,14 +43,8 @@ class HealthieStream(GraphQLStream):
             A dictionary of HTTP headers.
         """
         headers = {}
-        if self.config.get("environment").lower() == "sandbox":
-            environment = "sandbox"
-        else:
-            environment = "production"
-        api_key_name = f"{environment}_api_key"
-        if api_key_name in self.config:
-            api_key = self.config.get(api_key_name)
-            headers["Authorization"] = f"Basic {api_key}"
+        if "api_key" in self.config:
+            headers["Authorization"] = f"Basic {self.config.get('api_key')}"
         headers["AuthorizationSource"] = "API"
         return headers
 

@@ -1,16 +1,11 @@
 {
-  "type": [
-    "null",
-    "object"
-  ],
-  "additionalProperties": false,
+  "type": "object",
   "properties": {
     "active": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": ""
+      ]
     },
     "appointments": {
       "type": [
@@ -23,36 +18,37 @@
             "type": [
               "null",
               "string"
-            ],
-            "description": "The actual length of the appointment (in minutes). Filled in by the provider after the appointment"
+            ]
           },
           "appointment_category": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "The category of the appointment"
+            ]
           },
           "appointment_inclusions_count": {
             "type": [
               "null",
               "integer"
-            ],
-            "description": "The number of people (both providers and attendees) who are in the appointment"
+            ]
           },
           "appointment_label": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "A label for the appointment"
+            ]
+          },
+          "appointment_location_id": {
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "appointment_type_id": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "The ID of the type of appointment this is"
+            ]
           },
           "assigned_groups": {
             "type": [
@@ -65,15 +61,13 @@
                   "type": [
                     "null",
                     "string"
-                  ],
-                  "description": ""
+                  ]
                 },
                 "name": {
                   "type": [
                     "null",
                     "string"
-                  ],
-                  "description": ""
+                  ]
                 }
               }
             }
@@ -89,36 +83,31 @@
                   "type": [
                     "null",
                     "string"
-                  ],
-                  "description": ""
+                  ]
                 },
                 "user_id": {
                   "type": [
                     "null",
                     "string"
-                  ],
-                  "description": ""
+                  ]
                 },
                 "attended": {
                   "type": [
                     "null",
                     "boolean"
-                  ],
-                  "description": "Indicate whether a group appointment attendee have taken part in the appointment"
+                  ]
                 },
                 "cancelled": {
                   "type": [
                     "null",
                     "boolean"
-                  ],
-                  "description": "Indicate if a group appointment attendee cancelled the appointment"
+                  ]
                 },
                 "confirmed": {
                   "type": [
                     "null",
                     "boolean"
-                  ],
-                  "description": "False if the client needs to confirm the appointment, and has not (THIS FIELD IS CURRENTLY USED ONLY FOR GROUP APPT's)"
+                  ]
                 }
               }
             }
@@ -134,8 +123,7 @@
                   "type": [
                     "null",
                     "string"
-                  ],
-                  "description": ""
+                  ]
                 }
               }
             }
@@ -144,138 +132,115 @@
             "type": [
               "null",
               "boolean"
-            ],
-            "description": "The status of whether the provider has confirmed the appointment or not"
+            ]
           },
           "created_at": {
             "type": [
               "null",
               "string"
-            ],
-            "format": "date-time",
-            "description": "The date and time that the appointment was created"
+            ]
           },
           "current_position_in_recurring_series": {
             "type": [
               "null",
               "integer"
-            ],
-            "description": "The position of the appointment in the recurring series"
+            ]
           },
           "date": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "The date and time of the appointment"
+            ]
           },
           "deleted_at": {
             "type": [
               "null",
               "string"
-            ],
-            "format": "date-time",
-            "description": "The date and time the appointment was deleted."
+            ]
           },
           "end": {
             "type": [
               "null",
               "string"
-            ],
-            "format": "date-time",
-            "description": "The end time of the appointment"
+            ]
           },
           "id": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "The appointment ID"
+            ]
           },
           "initiator_id": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "ID of user that created of appointment"
+            ]
           },
           "is_blocker": {
             "type": [
               "null",
               "boolean"
-            ],
-            "description": "The status of whether this appointment is specifically meant to block availability"
+            ]
           },
           "is_group": {
             "type": [
               "null",
               "boolean"
-            ],
-            "description": "Indicates whether it's a group appointment"
+            ]
           },
           "is_zoom_chat": {
             "type": [
               "null",
               "boolean"
-            ],
-            "description": "The status of whether the video chat uses Zoom or Healthie Default telehealth"
+            ]
           },
           "last_client_conversation_id": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "id of last conversation between provider and client in appointment"
+            ]
           },
           "length": {
             "type": [
               "null",
               "integer"
-            ],
-            "description": "The length of the appointment (in minutes)"
+            ]
           },
           "location": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "The plaintext location of the appointment (only used for in-person appointments)"
+            ]
           },
           "notes": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "Quick notes on the appointment (only visisble to providers)"
+            ]
           },
           "other_party_id": {
             "type": [
               "null",
               "integer"
-            ],
-            "description": "The id of the provider"
+            ]
           },
           "patient_reschedule_count": {
             "type": [
               "null",
               "integer"
-            ],
-            "description": "The number of times a patient rescheduled an appointment"
+            ]
           },
           "pm_status": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "The status of the appointment. Can be one of \"Occurred\", \"No-Show\", \"Re-Scheduled\", \"Cancelled\""
+            ]
           },
           "pm_status_changed_at": {
             "type": [
               "null",
               "string"
-            ],
-            "format": "date-time",
-            "description": "The date and time the status of the appointment was last updated"
+            ]
           },
           "provider": {
             "type": [
@@ -287,8 +252,7 @@
                 "type": [
                   "null",
                   "string"
-                ],
-                "description": "The provider for the appointment"
+                ]
               }
             }
           },
@@ -296,8 +260,7 @@
             "type": [
               "null",
               "string"
-            ],
-            "description": "Provider name"
+            ]
           },
           "providers": {
             "type": [
@@ -310,8 +273,7 @@
                   "type": [
                     "null",
                     "string"
-                  ],
-                  "description": "ID of the provider"
+                  ]
                 }
               }
             }
@@ -320,8 +282,7 @@
             "type": [
               "null",
               "string"
-            ],
-            "description": "The clients reason for scheduling the appointment"
+            ]
           },
           "recurring_appointment": {
             "type": [
@@ -333,8 +294,7 @@
                 "type": [
                   "null",
                   "string"
-                ],
-                "description": "ID of the recurring appointment"
+                ]
               }
             }
           },
@@ -342,52 +302,43 @@
             "type": [
               "null",
               "string"
-            ],
-            "description": "A string containing info on how the appointment was scheduled"
+            ]
           },
           "start": {
             "type": [
               "null",
               "string"
-            ],
-            "format": "date-time",
-            "description": "The start time of the appointment"
+            ]
           },
           "title": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "The title of the appointment"
+            ]
           },
           "updated_at": {
             "type": [
               "null",
               "string"
-            ],
-            "format": "date-time",
-            "description": "The last date and time that the appointment was updated"
+            ]
           },
           "use_zoom": {
             "type": [
               "null",
               "boolean"
-            ],
-            "description": "Whether the appointment is through Zoom or not"
+            ]
           },
           "user_id": {
             "type": [
               "null",
               "integer"
-            ],
-            "description": "The id of the client (if a 1:1 appointment). If a group appointment, will be nil"
+            ]
           },
           "zoom_cloud_recording_urls": {
             "type": [
               "null",
               "string"
-            ],
-            "description": "URLs for Zoom cloud recordings for this appointment"
+            ]
           }
         }
       }
@@ -396,187 +347,157 @@
       "type": [
         "null",
         "string"
-      ],
-      "format": "date-time",
-      "description": "when the user was created"
+      ]
     },
     "dietitian_id": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "The Dietitian ID of the Client"
+      ]
     },
     "first_name": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "The first name of this user"
+      ]
     },
     "full_legal_name": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "The full legal name of this user"
+      ]
     },
     "full_name": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "The full name of this user"
+      ]
     },
     "gender": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "gender of user"
+      ]
     },
     "gender_identity": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "Gender identity of user (typically nil unless gender field is 'Other')"
+      ]
     },
     "gender_identity_code": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "User gender identity code"
+      ]
     },
     "group_name": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "The name of the patients user group"
+      ]
     },
     "human_id": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "ID of the human"
+      ]
     },
     "id": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "ID of the user"
+      ]
     },
     "is_active_provider": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "Check if the user is an active provider in an organization"
+      ]
     },
     "is_first_time_provider": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "boolean for if the user has ever logged in to Healthie as a provider"
+      ]
     },
     "is_org": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "If true, the user is in an organization"
+      ]
     },
     "is_org_admin": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "True if the user an organization admin"
+      ]
     },
     "is_org_with_multiple_users": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "If true, the user is in an organization with more than one user"
+      ]
     },
     "is_owner": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "the status of whether the user is the owner of their org or not"
+      ]
     },
     "is_patient": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "the status of whether the user is a patient or not"
+      ]
     },
     "is_super_admin": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "the status of whether the user is a super admin or not"
+      ]
     },
     "is_trialing": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "If user is trialing"
+      ]
     },
     "last_activity": {
       "type": [
         "null",
         "string"
-      ],
-      "format": "date-time",
-      "description": "last date user was active"
+      ]
     },
     "last_name": {
       "type": [
         "null",
         "boolean"
-      ],
-      "description": "The last name of this user"
+      ]
     },
     "last_sign_in_at": {
       "type": [
         "null",
         "string"
-      ],
-      "format": "date-time",
-      "description": "last date the user signed in"
+      ]
     },
     "next_appt_date": {
       "type": [
         "null",
         "string"
-      ],
-      "format": "date-time",
-      "description": "The Users next upcoming active appointment date"
+      ]
     },
     "patients_count": {
       "type": [
         "null",
         "integer"
-      ],
-      "description": "The number of patients belonging to the user"
+      ]
     },
     "pronouns": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "Pronouns that the client identifies with"
+      ]
     },
     "providers": {
       "type": [
@@ -598,37 +519,31 @@
       "type": [
         "null",
         "string"
-      ],
-      "description": "unique record identifier for user"
+      ]
     },
     "referring_provider_name": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "Name of the referring provider"
+      ]
     },
     "referring_provider_npi": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "NPI of the referring provider"
+      ]
     },
     "true_human_id": {
       "type": [
         "null",
         "string"
-      ],
-      "description": "The authenticated human if an account is masked"
+      ]
     },
     "updated_at": {
       "type": [
         "null",
         "string"
-      ],
-      "format": "date-time",
-      "description": "Date user was last updated"
+      ]
     }
   }
 }
