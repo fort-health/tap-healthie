@@ -17,21 +17,10 @@ class TapHealthie(Tap):
     # TODO: Update this section with the actual config values you expect:
     config_jsonschema = th.PropertiesList(
         th.Property(
-            "environment",
-            th.StringType,
-            description="The name of the environment, 'Sandbox' or 'Production'",
-        ),
-        th.Property(
-            "sandbox_api_key",
+            "api_key",
             th.StringType,
             secret=True,
-            description="The Sandbox API Key for authenticating to Healthie's API service",
-        ),
-        th.Property(
-            "production_api_key",
-            th.StringType,
-            secret=True,
-            description="The Production API Key for authenticating to Healthie's API service",
+            description="The API Key for authenticating to Healthie's API service",
         ),
         th.Property(
             "start_date",
