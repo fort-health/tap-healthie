@@ -74,7 +74,7 @@ class UsersStream(HealthieStream):
                     Property("appointment_inclusions_count", IntegerType),
                     Property("appointment_label", StringType),
                     Property("appointment_location_id", StringType),
-                    Property("appointment_type_id", StringType),
+                    Property("appointment_type_id", IntegerType),
                     Property(
                         "assigned_groups",
                         ArrayType(

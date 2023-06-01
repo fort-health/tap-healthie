@@ -47,7 +47,7 @@
           "appointment_type_id": {
             "type": [
               "null",
-              "string"
+              "integer"
             ]
           },
           "assigned_groups": {
