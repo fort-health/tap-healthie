@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.streams import GraphQLStream
 from singer_sdk.pagination import BaseOffsetPaginator
 
@@ -53,18 +54,16 @@ class HealthieStream(GraphQLStream):
     #     length = response.get(object).length()
     #     return length if count > length else 0
 
-    # def parse_response(self, response: requests.Response) -> Iterable[dict]:
-    #     """Parse the response and return an iterator of result records.
+    def parse_response(self, response: requests.Response) -> Iterable[dict]:
+        """Parse the response and return an iterator of result records.
 
-    #     Args:
-    #         response: The HTTP ``requests.Response`` object.
+        Args:
+            response: The HTTP ``requests.Response`` object.
 
-    #     Yields:
-    #         Each record from the source.
-    #     """
-    #     # TODO: Parse response body and return a set of records.
-    #     resp_json = response.json()
-    #     yield from resp_json.get("<TODO>")
+        Yields:
+            Each record from the source.
+        """
+        yield from extract_jsonpath(self.records_jsonpath, input=response.json())
 
     # def post_process(
     #     self,
