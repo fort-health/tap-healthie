@@ -37,6 +37,7 @@ class TapHealthie(Tap):
         """
         return [
             streams.AppointmentTypesStream(self),
+            streams.OrganizationMembersStream(self),
             streams.UsersStream(self),
         ]
 
