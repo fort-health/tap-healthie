@@ -7,14 +7,20 @@ from singer_sdk.streams import GraphQLStream
 from singer_sdk.pagination import BaseOffsetPaginator
 
 
-class Paginator(BaseOffsetPaginator):
+class OffsetPaginator(BaseOffsetPaginator):
+    def __init__(self, start_value: int, page_size: int, query_name, records_jsonpath, *args: t.Any, **kwargs: t.Any):
+        super().__init__(start_value, page_size, *args, **kwargs)
+        self.count_jsonpath = f'$.data.{query_name}Count'
+        self.records_jsonpath = records_jsonpath
+
     def has_more(self, response):
         data = response.json()
-        return data.get("userCount") > self.current_value
+        return next(extract_jsonpath(self.count_jsonpath, data)) > self._value
 
     def get_next(self, response):
         data = response.json()
-        return self._value + data.get("users").length()
+        self._page_size = len(list(extract_jsonpath(self.records_jsonpath, data)))
+        return self._value + self._page_size
 
 
 class HealthieStream(GraphQLStream):
@@ -49,10 +55,20 @@ class HealthieStream(GraphQLStream):
         headers["AuthorizationSource"] = "API"
         return headers
 
-    # def get_new_paginator(self, response, object, count_object):
-    #     count = response.get(count_object)
-    #     length = response.get(object).length()
-    #     return length if count > length else 0
+    @property
+    def query_name(self) -> str:
+        """Return the name of the object being queried in camelCase"""
+        first, *others = self.name.split('_')
+        return ''.join([first.lower(), *map(str.title, others)])
+
+    def get_new_paginator(self):
+        return OffsetPaginator(start_value=0, page_size=30, query_name = self.query_name, records_jsonpath=self.records_jsonpath)
+
+    def get_url_params(self, context, next_page_token):
+        params = {}
+        if next_page_token:
+            params["offset"] = next_page_token
+        return params
 
     def parse_response(self, response: requests.Response) -> Iterable[dict]:
         """Parse the response and return an iterator of result records.
