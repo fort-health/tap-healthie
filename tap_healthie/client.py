@@ -8,9 +8,9 @@ from singer_sdk.pagination import BaseOffsetPaginator
 
 
 class OffsetPaginator(BaseOffsetPaginator):
-    def __init__(self, start_value: int, page_size: int, name, records_jsonpath, *args: t.Any, **kwargs: t.Any):
+    def __init__(self, start_value: int, page_size: int, query_name, records_jsonpath, *args: t.Any, **kwargs: t.Any):
         super().__init__(start_value, page_size, *args, **kwargs)
-        self.count_jsonpath = f'$.data.{name}Count'
+        self.count_jsonpath = f'$.data.{query_name}Count'
         self.records_jsonpath = records_jsonpath
 
     def has_more(self, response):
@@ -55,8 +55,14 @@ class HealthieStream(GraphQLStream):
         headers["AuthorizationSource"] = "API"
         return headers
 
+    @property
+    def query_name(self) -> str:
+        """Return the name of the object being queried in camelCase"""
+        first, *others = self.name.split('_')
+        return ''.join([first.lower(), *map(str.title, others)])
+
     def get_new_paginator(self):
-        return OffsetPaginator(start_value=0, page_size=30, name = self.name, records_jsonpath=self.records_jsonpath)
+        return OffsetPaginator(start_value=0, page_size=30, query_name = self.query_name, records_jsonpath=self.records_jsonpath)
 
     def get_url_params(self, context, next_page_token):
         params = {}
