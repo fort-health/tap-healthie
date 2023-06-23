@@ -147,6 +147,31 @@ USERS_SCHEMA = PropertiesList(
     Property("patients_count", IntegerType),
     Property("pronouns", StringType),
     Property(
+        "policies",
+        ArrayType(
+            ObjectType(
+                Property("id", StringType),
+                Property("effective_end", StringType),
+                Property("effective_start", StringType),
+                Property(
+                    "insurance_plan",
+                    ObjectType(
+                        Property("id", StringType),
+                        Property("is_accepted", BooleanType),
+                        Property("name_and_id", StringType),
+                        Property("payer_id", StringType),
+                        Property("payer_name", StringType),
+                    ),
+                ),
+                Property("insurance_plan_id", StringType),
+                Property("name", StringType),
+                Property("priority_type", StringType),
+                Property("updated_at", StringType),
+                Property("user_id", StringType),
+            ),
+        )
+    ),
+    Property(
         "providers",
         ArrayType(
             ObjectType(
