@@ -107,6 +107,23 @@ USERS_QUERY = """
             last_sign_in_at
             next_appt_date
             patients_count
+            policies {
+                id
+                effective_end
+                effective_start
+                insurance_plan {
+                    id
+                    is_accepted
+                    name_and_id
+                    payer_id
+                    payer_name
+                }
+                insurance_plan_id
+                name
+                priority_type
+                updated_at
+                user_id
+            }
             pronouns
             providers {
                 id
