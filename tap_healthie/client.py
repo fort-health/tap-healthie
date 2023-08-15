@@ -19,7 +19,8 @@ class OffsetPaginator(BaseOffsetPaginator):
 
     def get_next(self, response):
         data = response.json()
-        self._page_size = len(list(extract_jsonpath(self.records_jsonpath, data)))
+        self._page_size = len(
+            list(extract_jsonpath(self.records_jsonpath, data)))
         return self._value + self._page_size
 
 
@@ -62,7 +63,7 @@ class HealthieStream(GraphQLStream):
         return ''.join([first.lower(), *map(str.title, others)])
 
     def get_new_paginator(self):
-        return OffsetPaginator(start_value=0, page_size=30, query_name = self.query_name, records_jsonpath=self.records_jsonpath)
+        return OffsetPaginator(start_value=0, page_size=30, query_name=self.query_name, records_jsonpath=self.records_jsonpath)
 
     def get_url_params(self, context, next_page_token):
         params = {}

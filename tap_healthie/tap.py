@@ -39,6 +39,7 @@ class TapHealthie(Tap):
             streams.AppointmentTypesStream(self),
             streams.OrganizationMembersStream(self),
             streams.UsersStream(self),
+            streams.ChartingItemsStream(self),
         ]
 
 

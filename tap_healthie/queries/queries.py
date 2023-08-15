@@ -18,6 +18,24 @@ APPOINTMENT_TYPES_QUERY = """
     }
 """
 
+CHARTING_ITEMS_QUERY = """
+    query ($user_id: String) {
+        chartingItems(user_id: $user_id) {
+            created_at
+            custom_module_form_name
+            filler_id
+            form_answer_group_id
+            id
+            is_document
+            name
+            provider_name
+            signed
+            use_for_charting
+            use_for_program
+        }
+    }
+"""
+
 USERS_QUERY = """
     query ($offset: Int) {
         usersCount

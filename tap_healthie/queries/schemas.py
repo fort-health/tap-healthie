@@ -23,6 +23,96 @@ APPOINTMENT_TYPES_SCHEMA = PropertiesList(
     Property("user_id", IntegerType),
 )
 
+CHARTING_ITEMS_SCHEMA = PropertiesList(
+    Property("created_at", StringType),
+    Property("custom_module_form_name", StringType),
+    Property("filler_id", StringType),
+    Property("form_answer_group_id", StringType),
+    Property("id", StringType),
+    Property("is_document", BooleanType),
+    Property("name", StringType),
+    Property("provider_name", StringType),
+    Property("signed", BooleanType),
+    Property("use_for_charting", BooleanType),
+    Property("use_for_program", BooleanType),
+)
+
+FORM_ANSWER_GROUPS_SCHEMA = PropertiesList(
+    Property("appointment_id", StringType),
+    Property(
+        "autoscored_sections",
+        ArrayType(
+            ObjectType(
+                Property("section_key", StringType),
+                Property("section_title", StringType),
+                Property("value", NumberType)
+            )
+        )
+    ),
+    Property(
+        "charting_note_addendums",
+        ArrayType(
+            ObjectType(
+                Property("content", StringType),
+                Property("created_at", StringType),
+                Property("id", StringType),
+                Property("user_id", StringType),
+            ),
+        ),
+    ),
+    # Property("cms1500", ObjectType(...)) TODO: if needed one day
+    Property("created_at", StringType),
+    # Property("custom_module_form", ObjectType(...)) TODO: if needed one day
+    Property("deleted_at", StringType),
+    Property("filler_id", StringType),
+    Property("finished", BooleanType),
+    Property(
+        "form_answer_group_signings",
+        ArrayType(
+            ObjectType(
+                Property("created_at", StringType),
+                Property("form_answer_group_id", StringType),
+                Property("id", StringType),
+                Property("user_id", StringType)
+            )
+        )
+    ),
+    # Property("form_answer_group_users_connections", ArrayType(ObjectType(...))) TODO: if needed one day
+    Property(
+        "form_answers",
+        ArrayType(
+            ObjectType(
+                Property("answer", StringType),
+                Property("created_at", StringType),
+                Property("custom_module_id", StringType),
+                Property("displayed_answer", StringType),
+                Property("form_answer_group_id", StringType),
+                Property("id", StringType),
+                Property("label", StringType),
+                Property("user_id", StringType)
+            )
+        )
+    ),
+    Property("group_appointment_attendees", ArrayType(StringType)),
+    Property("id", StringType),
+    Property(
+        "individual_client_notes",
+        ArrayType(
+            ObjectType(
+                Property("content", StringType),
+                Property("id", StringType),
+                Property("user_id", StringType)
+            )
+        )
+    ),
+    Property("is_group_appt_note", BooleanType),
+    Property("locked_at", StringType),
+    Property("locked_by_id", StringType),
+    Property("name", StringType),
+    Property("updated_at", StringType),
+    Property("user_id", StringType)
+)
+
 USERS_SCHEMA = PropertiesList(
     Property("active", BooleanType),
     Property(
