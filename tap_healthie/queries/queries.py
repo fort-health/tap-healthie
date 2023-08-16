@@ -20,7 +20,7 @@ APPOINTMENT_TYPES_QUERY = """
 
 CHARTING_ITEMS_QUERY = """
     query ($user_id: String) {
-        chartingItemsCount
+        chartingItemsCount(user_id: $user_id)
         chartingItems(user_id: $user_id) {
             created_at
             custom_module_form_name
