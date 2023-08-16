@@ -25,6 +25,68 @@ CHARTING_ITEMS_QUERY = """
             created_at
             custom_module_form_name
             filler_id
+            form_answer_group {
+                appointment {
+                    id
+                }
+                autoscored_sections {
+                    section_key
+                    section_title
+                    value
+                }
+                charting_note_addendums {
+                    content
+                    created_at
+                    id
+                    user {
+                        id
+                    }
+                }
+                created_at
+                deleted_at
+                filler {
+                    id
+                }
+                finished
+                form_answer_group_signings {
+                    created_at
+                    form_answer_group_id
+                    id
+                    user {
+                        id
+                    }
+                }
+                form_answers {
+                    answer
+                    created_at
+                    custom_module_id
+                    displayed_answer
+                    id
+                    label
+                    user_id
+                }
+                group_appointment_attendees {
+                    id
+                }
+                id
+                individual_client_notes {
+                    content
+                    id
+                    user {
+                        id
+                    }
+                }
+                is_group_appt_note
+                locked_at
+                locked_by {
+                    id
+                }
+                name
+                updated_at
+                user {
+                    id
+                }
+            }
             form_answer_group_id
             id
             is_document
