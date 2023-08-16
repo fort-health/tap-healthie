@@ -31,7 +31,6 @@ class AppointmentTypesStream(HealthieStream):
 
     name = "appointment_types"
     query_name = "appointmentTypes"
-    # schema_filepath = SCHEMAS_DIR / "appointment_types.json"
     schema = schemas.APPOINTMENT_TYPES_SCHEMA.to_dict()
     primary_keys = ["id"]
     records_jsonpath = f"$.data.{query_name}[*]"
@@ -62,7 +61,7 @@ class ChartingItemsStream(HealthieStream):
     query_name = "chartingItems"
     schema = schemas.CHARTING_ITEMS_SCHEMA.to_dict()
     primary_keys = ["id"]
-    records_jsonpath = f"$.data.${query_name}[*]"
+    records_jsonpath = f"$.data.{query_name}[*]"
     query = queries.CHARTING_ITEMS_QUERY
 
     parent_stream_type = UsersStream
