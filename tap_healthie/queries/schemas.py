@@ -35,6 +35,7 @@ CHARTING_ITEMS_SCHEMA = PropertiesList(
     Property("signed", BooleanType),
     Property("use_for_charting", BooleanType),
     Property("use_for_program", BooleanType),
+    Property("user_id", StringType, required=True),
 )
 
 FORM_ANSWER_GROUPS_SCHEMA = PropertiesList(
