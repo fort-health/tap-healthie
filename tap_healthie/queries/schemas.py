@@ -28,7 +28,7 @@ CHARTING_ITEMS_SCHEMA = PropertiesList(
     Property("custom_module_form_name", StringType),
     Property("filler_id", StringType),
     Property("form_answer_group_id", StringType),
-    Property("id", StringType),
+    Property("id", StringType, required=True),
     Property("is_document", BooleanType),
     Property("name", StringType),
     Property("provider_name", StringType),
