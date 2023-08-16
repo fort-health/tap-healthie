@@ -60,7 +60,7 @@ class ChartingItemsStream(HealthieStream):
     name = "charting_items"
     query_name = "chartingItems"
     schema = schemas.CHARTING_ITEMS_SCHEMA.to_dict()
-    primary_keys = ["id"]
+    primary_keys = ["id", "user_id"]
     records_jsonpath = f"$.data.{query_name}[*]"
     query = queries.CHARTING_ITEMS_QUERY
 
