@@ -31,7 +31,6 @@ class AppointmentTypesStream(HealthieStream):
 
     name = "appointment_types"
     query_name = "appointmentTypes"
-    # schema_filepath = SCHEMAS_DIR / "appointment_types.json"
     schema = schemas.APPOINTMENT_TYPES_SCHEMA.to_dict()
     primary_keys = ["id"]
     records_jsonpath = f"$.data.{query_name}[*]"
@@ -47,6 +46,31 @@ class UsersStream(HealthieStream):
     primary_keys = ["id"]
     records_jsonpath = f"$.data.{query_name}[*]"
     query = queries.USERS_QUERY
+
+    def get_child_context(self, record: dict, context: Optional[dict]) -> dict:
+        """Return a context dictionary for child streams."""
+        return {
+            "user_id": record["id"],
+        }
+
+
+class ChartingItemsStream(HealthieStream):
+    """Charting Items stream."""
+
+    name = "charting_items"
+    query_name = "chartingItems"
+    schema = schemas.CHARTING_ITEMS_SCHEMA.to_dict()
+    primary_keys = ["id", "user_id"]
+    records_jsonpath = f"$.data.{query_name}[*]"
+    query = queries.CHARTING_ITEMS_QUERY
+
+    parent_stream_type = UsersStream
+    ignore_parent_replication_keys = True
+
+    def get_url_params(self, context, next_page_token):
+        params = super().get_url_params(context, next_page_token)
+        params["user_id"] = context["user_id"]
+        return params
 
 
 class OrganizationMembersStream(HealthieStream):
