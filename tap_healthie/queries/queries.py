@@ -260,3 +260,33 @@ ORGANIZATION_MEMBERS_QUERY = """
         }
     }
 """
+
+CPT_CODES_QUERY = """
+    query ($offset: Int) {
+        cptCodesCount
+        cptCodes(offset: $offset, should_paginate: true) {
+            code
+            created_at
+            description
+            display_name
+            id
+            is_favorite
+            updated_at
+        }
+    }
+"""
+
+ICD10_CODES_QUERY = """
+    query ($offset: Int) {
+        icdCodesCount
+        icdCodes(offset: $offset, should_paginate: true) {
+            code
+            created_at
+            description
+            display_name
+            id
+            is_favorite
+            updated_at
+        }
+    }
+"""

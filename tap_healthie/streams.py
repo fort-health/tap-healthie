@@ -82,3 +82,25 @@ class OrganizationMembersStream(HealthieStream):
     primary_keys = ["id"]
     records_jsonpath = f"$.data.{query_name}[*]"
     query = queries.ORGANIZATION_MEMBERS_QUERY
+
+
+class CPTCodesStream(HealthieStream):
+    """CPT Codes stream."""
+
+    name = "cpt_codes"
+    query_name = "cptCodes"
+    schema = schemas.CPT_CODES_SCHEMA.to_dict()
+    primary_keys = ["id"]
+    records_jsonpath = f"$.data.{query_name}[*]"
+    query = queries.CPT_CODES_QUERY
+
+
+class ICD10CodesStream(HealthieStream):
+    """ICD10 Codes stream."""
+
+    name = "icd_codes"
+    query_name = "icdCodes"
+    schema = schemas.ICD10_CODES_SCHEMA.to_dict()
+    primary_keys = ["id"]
+    records_jsonpath = f"$.data.{query_name}[*]"
+    query = queries.ICD10_CODES_QUERY
