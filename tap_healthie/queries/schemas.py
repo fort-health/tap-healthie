@@ -319,3 +319,23 @@ USERS_SCHEMA = PropertiesList(
     Property("true_human_id", StringType),
     Property("updated_at", StringType),
 )
+
+CPT_CODES_SCHEMA = PropertiesList(
+    Property("code", StringType),
+    Property("created_at", StringType),
+    Property("description", StringType),
+    Property("display_name", StringType),
+    Property("id", StringType, required=True),
+    Property("is_favorite", BooleanType),
+    Property("updated_at", StringType),
+)
+
+ICD10_CODES_SCHEMA = PropertiesList(
+    Property("code", StringType),
+    Property("created_at", StringType),
+    Property("description", StringType),
+    Property("display_name", StringType),
+    Property("id", StringType, required=True),
+    Property("is_favorite", BooleanType),
+    Property("updated_at", StringType),
+)

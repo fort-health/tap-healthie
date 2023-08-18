@@ -4,25 +4,22 @@
 
 Built with the [Meltano Tap SDK](https://sdk.meltano.com) for Singer Taps.
 
-<!--
+## Overview
 
-Developer TODO: Update the below as needed to correctly describe the install procedure. For instance, if you do not have a PyPi repo, or if you want users to directly install from your git repo, you can modify this step as appropriate.
+This tap currently supports:
 
-## Installation
-
-Install from PyPi:
-
-```bash
-pipx install tap-healthie
-```
-
-Install from GitHub:
-
-```bash
-pipx install git+https://github.com/ORG_NAME/tap-healthie.git@main
-```
-
--->
+* Appointment Types
+* CPT Codes
+* ICD10 Codes
+* Users (clients)
+  * Appointments
+  * Charting Items
+    * Form Answer Groups
+      * Auto-scored Sections
+      * Charting Note Addendums
+      * Form Answer Group Signings
+      * Form Answers
+* Organization Members
 
 ## Configuration
 
@@ -64,6 +61,24 @@ Developer TODO: If your tap requires special access on the source system, or any
 -->
 
 ## Usage
+
+<!--
+Developer TODO: Update the below as needed to correctly describe the install procedure. For instance, if you do not have a PyPi repo, or if you want users to directly install from your git repo, you can modify this step as appropriate.
+
+## Installation
+
+Install from PyPi:
+
+```bash
+pipx install tap-healthie
+```
+
+Install from GitHub:
+
+```bash
+pipx install git+https://github.com/ORG_NAME/tap-healthie.git@main
+```
+-->
 
 You can easily run `tap-healthie` by itself or in a pipeline using [Meltano](https://meltano.com/).
 
