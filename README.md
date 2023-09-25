@@ -19,6 +19,7 @@ This tap currently supports:
       * Charting Note Addendums
       * Form Answer Group Signings
       * Form Answers
+  * Policies (insurance plans)
 * Organization Members
 
 ## Configuration
