@@ -200,8 +200,25 @@ USERS_QUERY = """
                     payer_name
                 }
                 insurance_plan_id
-                name
                 priority_type
+                name
+                num
+                group_num
+                same_address_as_client
+                holder_relationship
+                holder_first
+                holder_mi
+                holder_last
+                holder_gender
+                holder_dob
+                holder_location {
+                    id
+                    line1
+                    line2
+                    city
+                    state
+                    zip
+                }
                 updated_at
                 user_id
             }
