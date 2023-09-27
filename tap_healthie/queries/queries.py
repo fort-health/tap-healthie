@@ -185,6 +185,16 @@ USERS_QUERY = """
             is_trialing
             last_activity
             last_name
+            phone_number
+            additional_phone_number
+            location {
+                id
+                line1
+                line2
+                city
+                state
+                zip
+            }
             last_sign_in_at
             next_appt_date
             patients_count
