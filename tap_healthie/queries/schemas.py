@@ -259,6 +259,7 @@ USERS_SCHEMA = PropertiesList(
     Property("first_name", StringType),
     Property("full_legal_name", StringType),
     Property("full_name", StringType),
+    Property("dob", StringType),
     Property("gender", StringType),
     Property("gender_identity", StringType),
     Property("gender_identity_code", StringType),
