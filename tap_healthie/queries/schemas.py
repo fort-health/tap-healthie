@@ -275,7 +275,7 @@ USERS_SCHEMA = PropertiesList(
     Property("is_super_admin", BooleanType),
     Property("is_trialing", BooleanType),
     Property("last_activity", StringType),
-    Property("last_name", BooleanType),
+    Property("last_name", StringType),
     Property("phone_number", StringType),
     Property("additional_phone_number", StringType),
     Property(
