@@ -2,6 +2,7 @@ from singer_sdk.typing import (
     ArrayType,
     BooleanType,
     DateTimeType,
+    DateType,
     IntegerType,
     NumberType,
     ObjectType,
@@ -259,7 +260,7 @@ USERS_SCHEMA = PropertiesList(
     Property("first_name", StringType),
     Property("full_legal_name", StringType),
     Property("full_name", StringType),
-    Property("dob", StringType),
+    Property("dob", DateType),
     Property("gender", StringType),
     Property("gender_identity", StringType),
     Property("gender_identity_code", StringType),
@@ -321,7 +322,7 @@ USERS_SCHEMA = PropertiesList(
                 Property("holder_first", StringType),
                 Property("holder_last", StringType),
                 Property("holder_gender", StringType),
-                Property("holder_dob", StringType),
+                Property("holder_dob", DateType),
                 Property(
                     "holder_location",
                     ObjectType(
