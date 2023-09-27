@@ -169,6 +169,7 @@ USERS_QUERY = """
             first_name
             full_legal_name
             full_name
+            dob
             gender
             gender_identity
             gender_identity_code
