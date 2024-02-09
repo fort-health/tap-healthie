@@ -166,6 +166,7 @@ USERS_QUERY = """
             }
             created_at
             dietitian_id
+            email
             first_name
             full_legal_name
             full_name
