@@ -257,6 +257,7 @@ USERS_SCHEMA = PropertiesList(
     ),
     Property("created_at", StringType),
     Property("dietitian_id", StringType),
+    Property("email", StringType),
     Property("first_name", StringType),
     Property("full_legal_name", StringType),
     Property("full_name", StringType),
