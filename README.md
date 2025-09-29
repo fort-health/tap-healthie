@@ -9,8 +9,6 @@ Built with the [Meltano Tap SDK](https://sdk.meltano.com) for Singer Taps.
 This tap currently supports:
 
 * Appointment Types
-* CPT Codes
-* ICD10 Codes
 * Users (clients)
   * Appointments
   * Charting Items

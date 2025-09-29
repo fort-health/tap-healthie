@@ -40,8 +40,6 @@ class TapHealthie(Tap):
             streams.OrganizationMembersStream(self),
             streams.UsersStream(self),
             streams.ChartingItemsStream(self),
-            streams.CPTCodesStream(self),
-            streams.ICD10CodesStream(self),
         ]
 
 
